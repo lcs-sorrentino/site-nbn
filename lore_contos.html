@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contos – Lore de Nictheroy By Night</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f8f8f8;
+      --accent: #8b0000;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Special Elite', monospace;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #111;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--accent);
+      font-size: 1.2rem;
+      padding: 0.8rem 1rem 0 1rem;
+    }
+
+    .card p {
+      padding: 0 1rem 1rem 1rem;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contos</h1>
+    <p>Fragmentos narrativos e ecos perdidos das noites em Nictheroy.</p>
+  </header>
+
+  <section class="grid">
+    <div class="card" onclick="openModal('justine')">
+      <img src="img/lore/justine.jpg" alt="Diário de Justine">
+      <h2>Diário de Justine – Parte I</h2>
+      <p>Uma Toreadora obcecada, uma paixão proibida, e um relato encantado pela escuridão.</p>
+    </div>
+
+    <div class="card" onclick="openModal('inferno')">
+      <img src="img/lore/inferno-fronteira.jpg" alt="Inferno na Fronteira">
+      <h2>Inferno na Fronteira</h2>
+      <p>Quando o mundo dos vivos tenta alcançar o dos mortos com fogo e ferro.</p>
+    </div>
+
+    <div class="card" onclick="openModal('chegada')">
+      <img src="img/lore/chegada-rio.jpg" alt="Chegada ao Rio">
+      <h2>Chegada ao Rio</h2>
+      <p>Uma carta de 2007, a origem de um pesadelo ou o início de uma busca?</p>
+    </div>
+  </section>
+
+  <!-- Modal básica (conteúdo virá de JSON ou JS externo depois) -->
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000e6; color:#fff; z-index:9999; overflow:auto;">
+    <div style="max-width:800px; margin:5rem auto; padding:2rem; background:#111; border:2px solid var(--accent);">
+      <button onclick="closeModal()" style="float:right; font-size:1.2rem; background:none; border:none; color:var(--text); cursor:pointer;">[ fechar ]</button>
+      <div id="modal-content">
+        <h2 style="font-family: 'Cinzel', serif; color: var(--accent);">Título do Artigo</h2>
+        <p>Conteúdo será carregado aqui...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modal-content');
+      if (id === 'justine') {
+        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Diário de Justine – Parte I</h2><p>"Querido Ícaro, mais uma vez escrevo para ti na penumbra de um quarto que já não me pertence..."</p>`;
+      } else if (id === 'inferno') {
+        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Inferno na Fronteira</h2><p>"Nada jamais queimou como aquela estrada entre o visível e o não-dito..."</p>`;
+      } else if (id === 'chegada') {
+        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Chegada ao Rio</h2><p>"Senhores, informo que desembarquei no Rio sob ordens diretas do Arconte Esmirna..."</p>`;
+      }
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

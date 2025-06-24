@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lore – Nictheroy By Night</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --text: #f8f8f8;
+      --accent: #8b0000;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Special Elite', monospace;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #111;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--accent);
+      font-size: 1.4rem;
+      padding: 1rem 1rem 0 1rem;
+    }
+
+    .card p {
+      padding: 0 1rem 1rem 1rem;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    a.card {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lore</h1>
+    <p>Descubra os mistérios, histórias e criaturas que habitam a Nictheroy das sombras.</p>
+  </header>
+
+  <section class="grid">
+    <a href="lore-contos.html" class="card">
+      <img src="img/lore/contos-thumb.jpg" alt="Contos">
+      <h2>Contos</h2>
+      <p>Histórias, cartas e fragmentos da noite. Ecos de dor, paixão e sangue.</p>
+    </a>
+
+    <a href="lore-locais.html" class="card">
+      <img src="img/lore/locais-thumb.jpg" alt="Locais">
+      <h2>Locais</h2>
+      <p>Locais assombrados, históricos e marcados pelo sobrenatural de Nictheroy.</p>
+    </a>
+
+    <a href="lore-personagens.html" class="card">
+      <img src="img/lore/personagens-thumb.jpg" alt="Personagens">
+      <h2>Personagens</h2>
+      <p>Perfis e segredos das figuras que moldam a história nas sombras da cidade.</p>
+    </a>
+  </section>
+</body>
+</html>
