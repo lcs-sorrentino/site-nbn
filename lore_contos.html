@@ -80,22 +80,10 @@
   </header>
 
   <section class="grid">
-    <div class="card" onclick="openModal('carnaval_sangue.html')">
-      <img src="img/lore/carnaval.jpg" alt="Carnaval de Sangue">
+    <div class="card" onclick="openModal('lore_artigo_carnaval_sangue.html')">
+      <img src="img/lore/carnaval_sangur.png" alt="Carnaval de Sangue">
       <h2>Carnaval de Sangue</h2>
       <p>Uma crônica sangrenta nas noites de Carnaval carioca.</p>
-    </div>
-
-    <div class="card" onclick="openModal('inferno')">
-      <img src="img/lore/inferno-fronteira.jpg" alt="Inferno na Fronteira">
-      <h2>Inferno na Fronteira</h2>
-      <p>Quando o mundo dos vivos tenta alcançar o dos mortos com fogo e ferro.</p>
-    </div>
-
-    <div class="card" onclick="openModal('chegada')">
-      <img src="img/lore/chegada-rio.jpg" alt="Chegada ao Rio">
-      <h2>Chegada ao Rio</h2>
-      <p>Uma carta de 2007, a origem de um pesadelo ou o início de uma busca?</p>
     </div>
   </section>
 
@@ -103,27 +91,24 @@
   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000e6; color:#fff; z-index:9999; overflow:auto;">
     <div style="max-width:800px; margin:5rem auto; padding:2rem; background:#111; border:2px solid var(--accent);">
       <button onclick="closeModal()" style="float:right; font-size:1.2rem; background:none; border:none; color:var(--text); cursor:pointer;">[ fechar ]</button>
-      <div id="modal-content">
-      </div>
+      <iframe id="modal-frame" src="" style="width:90%; height:90%; margin: 5% auto; display:block; border:none;"></iframe>
+</div>
     </div>
   </div>
 
   <script>
-    function openModal(id) {
+    function openModal(url) {
       const modal = document.getElementById('modal');
-      const content = document.getElementById('modal-content');
-      if (id === 'carnaval_sangue') {
-        content.innerHTML = 'lore_artigo_carnaval_sangue.html';
-      } else if (id === 'inferno') {
-        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Inferno na Fronteira</h2><p>"Nada jamais queimou como aquela estrada entre o visível e o não-dito..."</p>`;
-      } else if (id === 'chegada') {
-        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Chegada ao Rio</h2><p>"Senhores, informo que desembarquei no Rio sob ordens diretas do Arconte Esmirna..."</p>`;
-      }
+      const frame = document.getElementById('modal-frame');
+      frame.src = url;
       modal.style.display = 'block';
     }
 
     function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+      const modal = document.getElementById('modal');
+      const frame = document.getElementById('modal-frame');
+      frame.src = '';
+      modal.style.display = 'none';
     }
   </script>
 </body>
