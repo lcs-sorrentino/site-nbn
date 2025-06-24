@@ -80,10 +80,10 @@
   </header>
 
   <section class="grid">
-    <div class="card" onclick="openModal('justine')">
-      <img src="img/lore/justine.jpg" alt="Diário de Justine">
-      <h2>Diário de Justine – Parte I</h2>
-      <p>Uma Toreadora obcecada, uma paixão proibida, e um relato encantado pela escuridão.</p>
+    <div class="card" onclick="openModal('carnaval_sangue.html')">
+      <img src="img/lore/carnaval.jpg" alt="Carnaval de Sangue">
+      <h2>Carnaval de Sangue</h2>
+      <p>Uma crônica sangrenta nas noites de Carnaval carioca.</p>
     </div>
 
     <div class="card" onclick="openModal('inferno')">
@@ -104,8 +104,6 @@
     <div style="max-width:800px; margin:5rem auto; padding:2rem; background:#111; border:2px solid var(--accent);">
       <button onclick="closeModal()" style="float:right; font-size:1.2rem; background:none; border:none; color:var(--text); cursor:pointer;">[ fechar ]</button>
       <div id="modal-content">
-        <h2 style="font-family: 'Cinzel', serif; color: var(--accent);">Título do Artigo</h2>
-        <p>Conteúdo será carregado aqui...</p>
       </div>
     </div>
   </div>
@@ -114,8 +112,8 @@
     function openModal(id) {
       const modal = document.getElementById('modal');
       const content = document.getElementById('modal-content');
-      if (id === 'justine') {
-        content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Diário de Justine – Parte I</h2><p>"Querido Ícaro, mais uma vez escrevo para ti na penumbra de um quarto que já não me pertence..."</p>`;
+      if (id === 'carnaval_sangue') {
+        content.innerHTML = 'lore_artigo_carnaval_sangue.html';
       } else if (id === 'inferno') {
         content.innerHTML = `<h2 style='font-family: Cinzel, serif; color: var(--accent);'>Inferno na Fronteira</h2><p>"Nada jamais queimou como aquela estrada entre o visível e o não-dito..."</p>`;
       } else if (id === 'chegada') {
